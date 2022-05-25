@@ -9,8 +9,9 @@
     border: none;
     cursor: pointer;
 }
-btn:hover {
-    padding: 8pc 20px;
+
+.btn:hover {
+    padding: 8px 20px;
     transition: all 0.3s ease-out;
     background: #fff;
     color: #6568F4;
@@ -29,15 +30,17 @@ btn:hover {
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
 }
+
 .btn--medium {
     padding: 8px 20px;
     border-radius: 4px;
-    font-size:  18px;
+    font-size: 18px;
     color: #fff;
 }
-.btn--large {
+
+.btn-large {
     padding: 12px 26px;
     border-radius: 4px;
-    font-size:  20px;
+    font-size: 20px;
     color: #fff;
-}
+} 
