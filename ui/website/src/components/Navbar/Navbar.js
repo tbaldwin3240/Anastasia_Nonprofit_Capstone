@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MenuItem } from "./Menuitems"
-import { Button } from "../Button"
+import { Button } from "./Button.js"
 import './Navbar.css'
 
 
