@@ -1,5 +1,6 @@
 import React from 'react'
 import HeroSection from '.'
+import FormSignup from '../FormSignup'
 import Navbar from "../Navbar/Navbar"
 
 
@@ -9,6 +10,7 @@ const Home = () => {
     <div>
     <Navbar/>
     <HeroSection/>
+    <FormSignup/>
     </div>
   )
 }
