@@ -1,0 +1,120 @@
+
+ h1 {
+    text-align: center;
+    position: relative;
+    bottom: 45px;
+}
+
+body {
+    background-color:blanchedalmond
+}
+
+
+.container {
+    border: 6px solid red; 
+    background-color: red;
+    text-align: center;
+    color: white;
+    width: 800px;
+    position: absolute;
+    left: 340px;
+    height: 45px; 
+    font-size: 30px;
+    margin: -40px;  
+
+}
+
+/* .Card1{
+    border: 20px solid blue;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 600px; 
+    height: 500px;
+}  */
+
+.row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .row div {
+    width: 50%;
+  }
+  
+  .noMargin {
+    margin: 0px;
+  
+  }
+  
+  .one {
+    background-color: red;
+    height: 400px;
+    width: 40px;
+    margin: 40px;
+  }
+  
+  .two {
+    background-color: yellow;
+    height: 400px;
+    width: 40px;
+    margin: 40px;
+  }
+  
+  .three {
+    background-color: green;
+    height: 400px;
+    width: 40px;
+    margin: 40px;
+  }
+  
+  .four {
+    background-color: blue;
+    height: 400px;
+    width: 40px; 
+    margin: 40px;
+ }
+  
+.oneb{
+  border: 10px solid white;
+  position: relative;
+  top: 175px;
+  height: 115px;
+  margin: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.twob{
+  border: 10px solid white;
+  position: relative;
+  top: 175px;
+  height: 115px;
+  margin: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.threeb{
+  border: 10px solid white;
+  position: relative;
+  top: 175px;
+  height: 115px;
+  margin: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fourb{
+  border: 10px solid white;
+  position: relative;
+  top: 175px;
+  height: 115px;
+  margin: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
