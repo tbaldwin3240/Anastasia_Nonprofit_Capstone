@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class='ng-app:orderApp' id='ng-app' lang='en' ng-controller='BaseController'>
+  <head>
+    <meta charset='utf-8'>
+    <title x-store-title=''></title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+    <meta content='!' name='fragment'>
+    <meta x-meta-description=''>
+    <base href='/'>
+    <!-- StyleSheets -->
+    <link href='/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <!-- %link{href: "/css/bootstrap-theme.min.css", rel: "stylesheet", type: "text/css"}/ -->
+    <link href='/css/new-styles.css' rel='stylesheet' type='text/css'>
+    <link href='/css/brandfont.css' rel='stylesheet' type='text/css'>
+    <link href='/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='/css/datetimepicker.css' rel='stylesheet' type='text/css'>
+    <!-- Javascript -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-45903608-1', ".com");
+      var API = "https://api.ordersnapp.com";
+      var DEPLOY_ENV = "production";
+    </script>
+    <script data-main='/scripts/require-config.js?t=202107061115' src='/scripts/vendor/require.js'></script>
+  </head>
+  <body>
+    <div class='dialogs'>
+      <div class='modal fade' id='recommend-change-password-modal' ng-controller='DialogController' role='dialog' tabindex='-1'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+                <span aria-hidden='true'>
+                  &times;
+                </span>
+              </button>
+              <h4 class='modal-title'>Time to Update Your Password!</h4>
+            </div>
+            <div class='modal-body'>
+              <p>We want to make sure your account and information remain safe and secure.</p>
+              <p>We recommend updating your password at least every 6 months.  Consider the following guidelines when changing your password:</p>
+              <ul>
+                <li>Have a unique password for every site you visit</li>
+                <li>Longer passwords are more secure, so try to have them at least 8 characters but 12-16 is even better</li>
+                <li>Use a mixture of uppercase, lowercase, numbers, and symbols</li>
+                <li>Don't re-use recent, previous passwords</li>
+              </ul>
+              <p>
+                Click
+                <a href='/myaccount?t=user' ng-click="redirectAndClose('/myaccount?t=user', '#recommend-change-password-modal')">here</a>
+                to update your password!
+              </p>
+            </div>
+            <div class='modal-footer'>
+              <button class='btn btn-primary' data-dismiss='modal' type='button'>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='drawers'>
+      <div class='left-drawer'>
+        <ul class='list-unstyled nav nav-pills nav-stacked'>
+          <li ng-class="{'active': page() == '/home'}">
+            <a href='/home' ng-click='toggleNav()'>
+              Home
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/menu'}">
+            <a href='/menu' ng-click='toggleNav()'>
+              Menu / Order
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/locations'}">
+            <a href='/locations?t=list' ng-click='toggleNav()'>
+              Location(s)
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/myaccount'}" ng-show='sessionService.isLoggedIn()'>
+            <a href='/myaccount' ng-click='toggleNav()'>
+              My Account
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/myaccount?t=qr'}" ng-show='sessionService.isLoggedIn()'>
+            <a href='/myaccount?t=qr' ng-click='toggleNav()'>
+              My QR Code
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/myorders'}" ng-show='sessionService.isLoggedIn()'>
+            <a href='/myorders' ng-click='toggleNav()'>
+              My Orders
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/my-gift-cards'}" ng-show='sessionService.isLoggedIn()'>
+            <a href='/my-gift-cards' ng-click='toggleNav()' ng-show='enableGiftCardsLink()'>
+              My Gift Cards
+            </a>
+          </li>
+          <li ng-show='sessionService.isLoggedIn()'>
+            <a href='' ng-click='sessionService.logout(true);toggleNav()'>
+              Logout
+            </a>
+          </li>
+          <li ng-class="{'active': page() == '/login'}" ng-hide='sessionService.isLoggedIn()'>
+            <a href='/login' ng-click='toggleNav()'>
+              Login / Register
+            </a>
+          </li>
+          <li ng-show='socNetworkService.networks.Facebook.url'>
+            <a class='social nav' ng-href='{{socNetworkService.networks.Facebook.url}}' target='_blank'>
+              <i class='fa fa-facebook-square'></i>
+            </a>
+          </li>
+          <li ng-show='socNetworkService.networks.Twitter.url'>
+            <a class='social nav' ng-href='{{socNetworkService.networks.Twitter.url}}' target='_blank'>
+              <i class='fa fa-twitter-square'></i>
+            </a>
+          </li>
+          <li ng-show='socNetworkService.networks.Googleplus.url'>
+            <a class='social nav' ng-href='{{socNetworkService.networks.Googleplus.url}}' target='_blank'>
+              <i class='fa fa-google-plus-square'></i>
+            </a>
+          </li>
+          <li ng-show='socNetworkService.networks.Instagram.url'>
+            <a class='social nav' ng-href='{{socNetworkService.networks.Instagram.url}}' target='_blank'>
+              <i class='fa fa-instagram'></i>
+            </a>
+          </li>
+          <li ng-show='socNetworkService.networks.TripAdvisor.url'>
+            <a class='social nav' ng-href='{{socNetworkService.networks.TripAdvisor.url}}' target='_blank'>
+              <img alt='TripAdvisor' class='img-icon' src='img/tripadvisor.png'>
+            </a>
+          </li>
+          <li ng-show='socNetworkService.networks.FourSquare.url'>
+            <a class='social nav' ng-href='{{socNetworkService.networks.FourSquare.url}}' target='_blank'>
+              <img alt='FourSquare' class='img-icon' src='img/foursquare.png'>
+            </a>
+          </li>
+        </ul>
+        <div class='drawer-footer text-center'>
+          <p>
+            <span>&copy; 2013-2016</span>
+          </p>
+          <p>
+            <span>Powered By:</span>
+            <a href='https://www.ordersnapp.com'>OrderSnapp.com</a>
+          </p>
+          <span ng-show='sessionService.isManager()'>
+            <a ng-href='{{sessionService.getManagerUrl()}}'>Manage</a>
+            |
+          </span>
+          <a href='/privacy_policy' ng-click='toggleNav()'>Privacy Policy</a>
+          |
+          <a href='/terms_of_use' ng-click='toggleNav()'>Terms Of Use</a>
+        </div>
+      </div>
+      <div class='right-drawer'>
+        <div class='cart'>
+          <table class='table table-condensed table-striped bottompad'>
+            <tbody ng-hide='cartService.currentCart.items.length === 0' ng-repeat='cart_item in cartService.currentCart.items'>
+              <tr>
+                <td colspan='4'>
+                  <a href='' ng-click='toggleCart()' ng-hide='cart_item.combo_item' ng-href='/menu?&amp;p={{cart_item.product.name}}&amp;quantity={{cart_item.quantity}}&amp;cart_item_id={{cart_item.id}}'>
+                    <h4 class='product-name'>{{cart_item.product.name}}</h4>
+                  </a>
+                  <h4 class='product-name' ng-hide='!cart_item.combo_item'>{{cart_item.product.name}}</h4>
+                </td>
+                <td colspan='1' ng-hide='cart_item.combo_item'>
+                  <div class='pull-right'>
+                    <button aria-hidden='true' class='close' ng-click='cartService.removeFromCart(cart_item)' style='opacity:0.6' type='button'>
+                      <h4 class='fa fa-times'></h4>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan='3'>
+                  <form loading='update_cart.loading' ng-hide='cart_item.combo_item' role='form'>
+                    <div class='form-group'>
+                      <select class='form-control' name='quantity' ng-change='update_cart.loading=true; cartService.updateQuantity(cart_item)' ng-model='cart_item.quantity' ng-options='n as n for n in quantity_range' style='min-width:40%;max-width:60%;' type='number'></select>
+                    </div>
+                  </form>
+                </td>
+                <td colspan='5' ng-hide='cart_item.combo_item'>
+                  <div class='pull-right'>{{cart_item.product.price*cart_item.quantity | currency}}</div>
+                </td>
+                <td colspan='5' ng-hide='!cart_item.combo_item'>
+                  <div class='pull-right'>{{cart_item.price*cart_item.quantity | currency}}</div>
+                </td>
+              </tr>
+              <tr ng-repeat='option in cart_item.options'>
+                <td colspan='3'>
+                  {{option.product_option_value.name}}
+                  <small ng-show='option.product_option_modifier.name'>- {{option.product_option_modifier.name}}</small>
+                </td>
+                <td colspan='2'>
+                  <div class='pull-right'>
+                    {{option.price*cart_item.quantity | currency}}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td colspan='12'>
+                  <div class='btn-add-more' ng-click='toggleCart()'>
+                    <h5 class='pull-left add-more'>Add more items</h5>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button class='btn btn-default btn-block bottomborder' ng-click="go('/checkout')" ng-hide='cartService.currentCart.items.length === 0 || (storeService.currentStore.accepts_cash==false &amp;&amp; storeService.currentStore.accepts_credit_card ==false)'>
+            <h4 class='pull-left'>Checkout</h4>
+            <h4 class='pull-right'>{{cartService.currentCart.price | currency}}</h4>
+          </button>
+          <div class='text-center' ng-show='cartService.currentCart.items.length === 0'>
+            Cart is empty.
+          </div>
+          <div class='text-center' ng-show='storeService.currentStore.accepts_cash==false &amp;&amp; storeService.currentStore.accepts_credit_card==false'>This store is not currently accepting orders online</div>
+        </div>
+      </div>
+    </div>
+    <div id='content'>
+      <div id='wrap'>
+        <div class='visible-xs'>
+          <nav class='navbar navbar-default' role='navigation'>
+            <button class='navbar-btn btn pull-left mobile_nav btn-padding' ng-click='toggleNav()' type='button'>
+              <i class='fa fa-bars fa-lg'></i>
+            </button>
+            <a class='navbar-brand' href='#' ng-bind='brandService.currentBrand.name'></a>
+            <button class='navbar-btn btn pull-right mobile_nav btn-cart btn-padding' ng-click='toggleCart()' type='button'>
+              <i class='fa fa-shopping-cart fa-lg'></i>
+            </button>
+          </nav>
+        </div>
+        <nav class='navbar navbar-default hidden-xs' role='navigation'>
+          <div class='navbar-header'>
+            <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+              <span class='sr-only'>Toggle navigation</span>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' href='#' ng-bind='brandService.currentBrand.name'></a>
+          </div>
+          <div class='collapse navbar-collapse navbar-ex1-collapse'>
+            <ul class='nav navbar-nav navbar-right'>
+              <li>
+                <a href='/home' ng-class="{'active': page() == '/home'}">Home</a>
+              </li>
+              <li>
+                <a href='/menu' ng-class="{'active': page() == '/menu'}">Menu / Order</a>
+              </li>
+              <li>
+                <a href='/locations?t=list' ng-class="{'active': page() == '/locations'}">Locations</a>
+              </li>
+              <!-- %li -->
+              <!-- %a{href: "/coupons", "ng-class" => "{'active': page() == '/coupons'}"} Coupons -->
+              <li class='dropdown' ng-hide='sessionService.isLoggedIn()'>
+                <a class='dropdown' data-toggle='dropdown' href=''>
+                  Login
+                  <b class='caret'></b>
+                </a>
+                <ul class='dropdown-menu'>
+                  <li>
+                    <form loading='user.loading' role='form'>
+                      <div class='form-group'>
+                        <input class='input-sm form-control' name='email' ng-model='user.email' placeholder='Email' type='email'>
+                      </div>
+                      <label class='control-label help-inline'>{{user.error}}</label>
+                      <label class='control-label help-inline'>{{user.message}}</label>
+                      <div class='form-group'>
+                        <input class='input-sm form-control' name='password' ng-model='user.password' placeholder='Password' type='password'>
+                      </div>
+                      <button class='btn btn-block btn-default btn-sm login-btn' ng-click='login(user)'>Login</button>
+                      <div class='text-center top-pad'>
+                        <a href='' ng-click='user.loading=true;sessionService.resetPassword(user)'>
+                          Forgot password?
+                        </a>
+                      </div>
+                      <div class='text-center top-pad'>
+                        <a href='/register'>
+                          Register
+                        </a>
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+              <li class='dropdown' ng-show='sessionService.hasLoggedInUser()'>
+                <a class='dropdown-toggle' data-toggle='dropdown' href='' ng-class="{'active': page() == '/myaccount' || page() == '/myorders'}">
+                  {{sessionService.currentUser.first_name}}
+                  <b class='caret'></b>
+                </a>
+                <ul class='dropdown-menu'>
+                  <li>
+                    <a href='/myaccount'>My Account</a>
+                  </li>
+                  <li>
+                    <a href='/myaccount?t=qr'>My QR Code</a>
+                  </li>
+                  <li>
+                    <a href='/myorders'>My Orders</a>
+                  </li>
+                  <li ng-show='enableGiftCardsLink()'>
+                    <a href='/my-gift-cards'>My Gift Cards</a>
+                  </li>
+                  <li ng-show="sessionService.isLoggedIn() &amp;&amp; storeService.currentStore.loyalty_type == 'points'">
+                    <a href='/menu/rewards'>Rewards Menu</a>
+                  </li>
+                  <li>
+                    <a href='' ng-click='sessionService.logout(true)'>Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class='container' ng-view=''></div>
+      </div>
+      <footer class='hidden-xs'>
+        <span>
+          <div class='pull-left'>
+            © 2013-2021
+            Powered By:
+            <a href='https://www.ordersnapp.com'>OrderSnapp.com</a>
+          </div>
+        </span>
+        <span>
+          <div class='pull-right'>
+            <span ng-show='sessionService.isManager()'>
+              <a ng-href='{{sessionService.getManagerUrl()}}'>Manage</a>
+              |
+            </span>
+            <a href='/privacy_policy'>Privacy Policy</a>
+            |
+            <a href='/terms_of_use'>Terms Of Use</a>
+          </div>
+        </span>
+        <div ng-controller='HiddenFooterController' style='display: none'>
+          <markdown ng-model='hiddenAbout'></markdown>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
