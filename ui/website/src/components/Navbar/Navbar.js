@@ -28,7 +28,7 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                <Button>Sign Up</Button>
+                <Button><a href="http://localhost:3000/signup">Sign Up</a></Button>
             </nav>
         )
     }
