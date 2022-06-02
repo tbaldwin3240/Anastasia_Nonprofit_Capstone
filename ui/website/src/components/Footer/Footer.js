@@ -134,7 +134,7 @@ return (
 		<Row>
 		<Column>
 			<Heading>About Us</Heading>
-			<FooterLink href="#">Aim</FooterLink>
+			<FooterLink href="#">Mission</FooterLink>
 			<FooterLink href="#">Vision</FooterLink>
 			<FooterLink href="#">Testimonials</FooterLink>
 		</Column>
