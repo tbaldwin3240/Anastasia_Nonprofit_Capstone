@@ -18,13 +18,13 @@ const Home = () => {
   return (
     <div>
 
-   
+
 
     <Router>
       
         <div  className='App'>
           <Navbar />
-        
+          <Footer/>
         </div>
         <Routes>
           <Route path ="/" element={<HeroSection/>}>
