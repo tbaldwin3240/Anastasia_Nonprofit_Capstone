@@ -134,7 +134,7 @@ return (
 		<Row>
 		<Column>
 			<Heading>About Us</Heading>
-			<FooterLink href="#">Mission</FooterLink>
+			<FooterLink href="https://cityofrefugeatl.org/job-training">Mission</FooterLink>
 			<FooterLink href="#">Vision</FooterLink>
 			<FooterLink href="#">Testimonials</FooterLink>
 		</Column>
