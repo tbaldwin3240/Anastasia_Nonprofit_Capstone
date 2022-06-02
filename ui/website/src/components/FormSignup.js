@@ -18,7 +18,7 @@ const FormSignup = ({ submitForm }) => {
           <input
             className='form-input'
             type='text'
-            name='first name'
+            name='firstname'
             placeholder='Enter your first name'
             value={values.firstname}
             onChange={handleChange}
@@ -30,9 +30,9 @@ const FormSignup = ({ submitForm }) => {
           <input
             className='form-input'
             type='text'
-            name='last name'
+            name='lastname'
             placeholder='Enter your last name'
-            value={values.firstname}
+            value={values.lastname}
             onChange={handleChange}
           />
           {errors.lasttname && <p>{errors.lastname}</p>}
@@ -41,7 +41,7 @@ const FormSignup = ({ submitForm }) => {
           <label className='form-label'>Email</label>
           <input
             className='form-input'
-            type='email'
+            type='text'
             name='email'
             placeholder='Enter your email'
             value={values.email}
@@ -53,7 +53,7 @@ const FormSignup = ({ submitForm }) => {
           <label className='form-label'>Phone Number</label>
           <input
             className='form-input'
-            type='phonenumber'
+            type='text'
             name='phonenumber'
             placeholder='Please enter your phone number'
             value={values.phonenumber}
@@ -64,9 +64,9 @@ const FormSignup = ({ submitForm }) => {
         <button className='form-input-btn' type='submit'>
           Sign up
         </button>
-        <span className='form-input-login'>
+        {/* <span className='form-input-login'>
           Already have an account? Login <a href='#'>here</a>
-        </span>
+        </span> */}
       </form>
     </div>
   );
