@@ -1,9 +1,14 @@
 import React from 'react'
 import HeroSection from '.'
+
 import FrontCard from '../FrontCard'
 import Navbar from "../Navbar/Navbar"
 import FormSignup from '../FormSignup'
 import Footer from '../Footer/Footer'
+import Form from '../Form'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+
 
 
 
@@ -12,11 +17,27 @@ const Home = () => {
 
   return (
     <div>
-    <Navbar/>
-    <HeroSection/>
-    <FormSignup/>
-      <FrontCard/>  
-    <Footer/>
+
+   
+
+    <Router>
+      
+        <div  className='App'>
+          <Navbar />
+        
+        </div>
+        <Routes>
+          <Route path ="/" element={<HeroSection/>}>
+          </Route>
+
+          <Route path ="/signup" element={<Form/>}>
+          </Route>
+
+          <Route path ="*" element={<HeroSection/>}>
+          </Route>
+      </Routes>
+    </Router>
+
     </div>
   )
 }
