@@ -1,16 +1,25 @@
 import React from 'react'
 import HeroSection from '.'
-import FormSignup from '../FormSignup'
-import Form from '../Form'
 
+import FrontCard from '../FrontCard'
 import Navbar from "../Navbar/Navbar"
+import FormSignup from '../FormSignup'
+import Footer from '../Footer/Footer'
+import Form from '../Form'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+
+
+
 
 
 const Home = () => {
 
   return (
     <div>
+
+   
+
     <Router>
       
         <div  className='App'>
@@ -28,6 +37,7 @@ const Home = () => {
           </Route>
       </Routes>
     </Router>
+
     </div>
   )
 }
