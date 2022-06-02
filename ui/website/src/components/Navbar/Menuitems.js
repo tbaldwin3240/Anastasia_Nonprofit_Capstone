@@ -1,27 +1,29 @@
+import { Link } from 'react-router-dom' 
+
 export const MenuItems = [
     {
         title: 'Home',
-        url: '#',
+        url: '/',
         cName: 'nav-links'
     },
     {
         title: 'Services',
-        url: '#',
+        url: 'http://localhost:3000/services',
         cName: 'nav-links'
     },
     {
         title: 'Products',
-        url: '#',
+        url: 'http://localhost:3000/products',
         cName: 'nav-links'
     },
     {
         title: 'Contact Us',
-        url: '#',
+        url: 'http://localhost:3000/contactus',
         cName: 'nav-links'
     },
     {
         title: 'Sign up',
-        url: '#',
+        url: 'http://localhost:3000/signup',
         cName: 'nav-links-mobile'
     }
 
