@@ -43,8 +43,8 @@ grid-gap: 20px;
 
 export const FooterLink = styled.a`
 color: #fff;
-margin-bottom: 20px;
-font-size: 18px;
+margin-bottom: 5px;
+font-size: 15px;
 text-decoration: none;
 
 &:hover {
@@ -54,7 +54,7 @@ text-decoration: none;
 `;
 
 export const Heading = styled.p`
-font-size: 24px;
+font-size: 20px;
 color: #fff;
 margin-bottom: 40px;
 font-weight: bold;
