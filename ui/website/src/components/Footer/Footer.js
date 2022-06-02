@@ -6,14 +6,15 @@ Row,
 Column,
 FooterLink,
 Heading,
-} from "./FooterStyle";
+} from "./FooterStyle";  
+
 
 const Footer = () => {
 return (
 	<Box>
 	<h1 style={{ color: "green",
-				textAlign: "center",
-				marginTop: "-50px" }}>
+		textAlign: "center",
+		marginTop: "-50px" }}>
 	
 	</h1>
 	<Container>
@@ -33,11 +34,9 @@ return (
 		</Column>
 		<Column>
 			<Heading>Contact Us</Heading>
-			<FooterLink href="#">Address</FooterLink>
 			<FooterLink href="#">1300 Joseph E. Boone Blvd NW, Atlanta, GA 30314</FooterLink>
-			<FooterLink href="#">Phone Number</FooterLink>
 			<FooterLink href="#">470-638-8109</FooterLink>
-			<FooterLink href="#">Apply</FooterLink>
+			<FooterLink href="https://docs.google.com/forms/d/e/1FAIpQLSe-HwllVtU_VC73qeOVkaQ2e4aOTzj995j04pmFErssAzvPKQ/viewform">Apply</FooterLink>
 		</Column>
 		<Column>
 			<Heading>Social Media</Heading>
@@ -48,20 +47,20 @@ return (
 				</span>
 			</i>
 			</FooterLink> */}
-			<FooterLink href="#">
+			<FooterLink href="https://www.instagram.com/gfcculinaryprogram/">
 			<i className="fab fa-instagram">
 				<span style={{ marginLeft: "10px" }}>
 				Instagram
 				</span>
 			</i>
-			{/* </FooterLink>
+			</FooterLink>
+			{/* 
 			<FooterLink href="#">
 			<i className="fab fa-twitter">
 				<span style={{ marginLeft: "10px" }}>
 				Twitter
 				</span>
 			</i> */}
-			</FooterLink>
 			<FooterLink href="#">
 			<i className="fab fa-youtube">
 				<span style={{ marginLeft: "10px" }}>
@@ -73,6 +72,6 @@ return (
 		</Row>
 	</Container>
 	</Box>
-);
+	);
 };
 export default Footer;

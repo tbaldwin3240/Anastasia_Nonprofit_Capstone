@@ -166,7 +166,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
+ 
 .close-btn {
   position: absolute;
   top: 2%;
@@ -299,4 +299,5 @@
   text-decoration: none;
   color: #27cdff;
   font-weight: 600;
-}
+} 
+

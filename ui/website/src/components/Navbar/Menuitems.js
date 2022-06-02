@@ -12,8 +12,8 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Products',
-        url: 'http://localhost:3000/products',
+        title: 'About',
+        url: 'http://localhost:3000/about',
         cName: 'nav-links'
     },
     {

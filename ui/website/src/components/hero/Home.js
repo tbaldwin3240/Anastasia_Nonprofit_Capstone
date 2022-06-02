@@ -23,13 +23,18 @@ const Home = () => {
     <Router>
       
         <div  className='App'>
-          <Navbar />
+          <Navbar/>
           <Footer/>
         </div>
         <Routes>
           <Route path ="/" element={<HeroSection/>}>
+          </Route> 
+          <Route path ="/services" element={<Holder/>}>
+          </Route> 
+          <Route path ="/contactus" element={<Contact/>}>
+          </Route> 
+          <Route path ="/about" element={<About/>}>
           </Route>
-
           <Route path ="/signup" element={<Form/>}>
           </Route>
 

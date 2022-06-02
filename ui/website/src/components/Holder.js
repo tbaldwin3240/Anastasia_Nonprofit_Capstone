@@ -17,6 +17,21 @@ class Holder extends React.Component {
                 boximage=''
                 boxlink=''
                 boxwords='super mario'
+            /> 
+             <HoverBox
+                boximage=''
+                boxlink=''
+                boxwords='super mario'
+            /> 
+             <HoverBox
+                boximage=''
+                boxlink=''
+                boxwords='super mario'
+            />
+             <HoverBox
+                boximage=''
+                boxlink=''
+                boxwords='super mario'
             />
 
                 </div>
