@@ -1,7 +1,11 @@
 import React from 'react'
 import HeroSection from '.'
-import FormSignup from '../FormSignup'
+import FrontCard from '../FrontCard'
 import Navbar from "../Navbar/Navbar"
+import FormSignup from '../FormSignup'
+import Footer from '../Footer/Footer'
+
+
 
 
 const Home = () => {
@@ -11,6 +15,8 @@ const Home = () => {
     <Navbar/>
     <HeroSection/>
     <FormSignup/>
+      <FrontCard/>  
+    <Footer/>
     </div>
   )
 }
