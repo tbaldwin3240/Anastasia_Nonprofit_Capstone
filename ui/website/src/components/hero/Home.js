@@ -7,6 +7,7 @@ import FormSignup from '../FormSignup'
 import Footer from '../Footer/Footer'
 import Form from '../Form'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import About from '../About'
 
 
 
@@ -24,6 +25,7 @@ const Home = () => {
       
         <div  className='App'>
           <Navbar />
+          <About/>
           <Footer/>
         </div>
         <Routes>
@@ -41,5 +43,7 @@ const Home = () => {
     </div>
   )
 }
+
+
 
 export default Home
