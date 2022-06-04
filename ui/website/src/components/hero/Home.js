@@ -36,9 +36,11 @@ const Home = () => {
           </Route>
 
           <Route path ="*" element={<HeroSection/>}>
+          {/* <a href='#about' onClick={()=> setActiveHome('#about')} className={setActiveHome ==='#about'? 'active':''}><Home></Home></a> */}
           </Route>
       </Routes>
     </Router>
+
 
     </div>
   )
