@@ -5,9 +5,9 @@ padding: 80px 60px;
 background: black;
 position: absolute;
 bottom: 0;
-width: 100%;
-
-
+width 100%;
+top: 1800px;
+right: 245px;
 
 @media (max-width: 1000px) {
 	padding: 70px 30px;
@@ -60,4 +60,3 @@ color: #fff;
 margin-bottom: 40px;
 font-weight: bold;
 `;
-

@@ -1,10 +1,13 @@
 import React from 'react'
 import './About.css'
+import Footer from './Footer/Footer'
 
 const About = () => {
   return (
     <section>
         <h1>About Me!</h1>
+        <img src='https://static7.depositphotos.com/1006018/793/i/950/depositphotos_7933181-stock-photo-african-american-chef-cook-or.jpg' alt=''
+    />
         <p> Greetings, my name is Anastasia Caphart, and I am in the Education Specialist Degree program in 
             Instructional Technology at Kennesaw State University where I began the program in the Fall of 2015 
             (with two-semester break) and will graduate Fall 2017.  I graduated from Kennesaw State University
@@ -20,7 +23,6 @@ The purpose of this portfolio is for me to demonstrate mastery of the PSC Instru
 
         <div className='about_me'>
             <div className='about_me image'>
-                <img src='' alt=''/>
             </div>
         </div>
         <h4> Experience </h4>
