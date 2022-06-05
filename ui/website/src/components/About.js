@@ -20,7 +20,6 @@ The purpose of this portfolio is for me to demonstrate mastery of the PSC Instru
         
 ​I have thoroughly enjoyed my experience at Kennesaw State University, and feel that I am well-prepared to integrate technology into my classroom and to assist other educators in using technology and providing professional learning opportunities for them.
                </p>
-
         <div className='about_me'>
             <div className='about_me image'>
             </div>
