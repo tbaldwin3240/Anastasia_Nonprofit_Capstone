@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css"
 
+
 const Mission = () => {
     return(
         <div id="myMiss">
