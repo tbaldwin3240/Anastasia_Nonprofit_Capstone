@@ -3,6 +3,7 @@ import HeroSection from '.'
 
 import FrontCard from '../FrontCard'
 import Navbar from "../Navbar/Navbar"
+import Testimonials from '../Testimonials/Index';
 import FormSignup from '../FormSignup'
 import Footer from '../Footer/Footer'
 import Form from '../Form'
@@ -17,27 +18,21 @@ const Home = () => {
 
   return (
     <div>
-
-
-
-    <Router>
-      
-        <div  className='App'>
-          <Navbar />
-          <Footer/>
-        </div>
+      <Router>
+        <Navbar />
         <Routes>
-          <Route path ="/" element={<HeroSection/>}>
-          </Route>
+            <Route path ="/" element={<HeroSection/>}>
+            </Route>
 
-          <Route path ="/signup" element={<Form/>}>
-          </Route>
+            <Route path ="/signup" element={<Form/>}>
+            </Route>
 
-          <Route path ="*" element={<HeroSection/>}>
-          </Route>
-      </Routes>
-    </Router>
-
+            <Route path ="*" element={<HeroSection/>}>
+            </Route>
+        </Routes>
+        <Testimonials />
+        <Footer/>
+      </Router>
     </div>
   )
 }

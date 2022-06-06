@@ -13,7 +13,7 @@ Heading,
 const Footer = () => {
 	
 return (
-	<Box>
+	<Box style={{position: "relative"}}>
 	<h1 style={{ color: "green",
 				textAlign: "center",
 				marginTop: "-50px" }}>
@@ -42,11 +42,11 @@ return (
 		<Column>
 			<Heading>Social Media</Heading>
 			<FooterLink href="https://www.instagram.com/gfcculinaryprogram/">
-			<i className="fab fa-instagram">
-				<span style={{ marginLeft: "10px" }}>
-				Instagram
-				</span>
-			</i>
+				<i className="fab fa-instagram">
+					<span style={{ marginLeft: "10px" }}>
+					Instagram
+					</span>
+				</i>
 			</FooterLink>
 		</Column>
 		</Row>
