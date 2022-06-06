@@ -1,8 +1,8 @@
 import React from 'react';
 
-
 import './App.css';
 import Home from './components/hero/Home';
+import Mission from './components/Missison';
 
 const App = () => {
   

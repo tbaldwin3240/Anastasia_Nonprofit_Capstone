@@ -7,13 +7,13 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Services',
-        url: 'http://localhost:3000/services',
+        title: 'Gallery',
+        url: 'http://localhost:3000/galley',
         cName: 'nav-links'
     },
     {
-        title: 'Products',
-        url: 'http://localhost:3000/products',
+        title: 'About Me',
+        url: 'http://localhost:3000/AboutMe',
         cName: 'nav-links'
     },
     {
