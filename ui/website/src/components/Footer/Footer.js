@@ -22,7 +22,7 @@ return (
 			<Heading>About Us</Heading>
 			<FooterLink href="#">Mission</FooterLink>
 			<FooterLink href="#">Vision</FooterLink>
-			<FooterLink href="#">Testimonials</FooterLink>
+			{/* <FooterLink href="#">Testimonials</FooterLink> */}
 			<FooterLink href="#">About</FooterLink>
 		</Column>
 		<Column>
@@ -72,6 +72,7 @@ return (
 		</Row>
 	</Container>
 	</Box>
+	
 );
 };
 

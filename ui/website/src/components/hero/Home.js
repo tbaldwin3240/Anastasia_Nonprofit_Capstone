@@ -7,6 +7,7 @@ import FormSignup from '../FormSignup'
 import Footer from '../Footer/Footer'
 import Form from '../Form'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import About from '../About'
 
 
 
@@ -24,6 +25,7 @@ const Home = () => {
       
         <div  className='App'>
           <Navbar />
+          <About/>
           <Footer/>
         </div>
         <Routes>
@@ -34,12 +36,16 @@ const Home = () => {
           </Route>
 
           <Route path ="*" element={<HeroSection/>}>
+          {/* <a href='#about' onClick={()=> setActiveHome('#about')} className={setActiveHome ==='#about'? 'active':''}><Home></Home></a> */}
           </Route>
       </Routes>
     </Router>
 
+
     </div>
   )
 }
+
+
 
 export default Home
