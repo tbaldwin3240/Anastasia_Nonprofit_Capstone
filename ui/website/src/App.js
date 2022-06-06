@@ -1,8 +1,8 @@
 import React from 'react';
 
-
 import './App.css';
 import Home from './components/hero/Home';
+import Mission from './components/Missison';
 
 const App = () => {
   
@@ -21,9 +21,7 @@ const App = () => {
 
 
   return (
-    <div className="App">
       <Home/>
-    </div>
   );
 }
 
