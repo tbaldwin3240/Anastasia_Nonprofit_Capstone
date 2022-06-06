@@ -4,7 +4,7 @@ import { useWindupString } from "windups";
 const Testimonials = () => {
 
     const [currentTestimonial] = useWindupString(
-        "The culinary class provides such nutritious meals...", {
+        "Satisfying food that's feed your soul with great company", {
             pace: () => 100
         }
     );
