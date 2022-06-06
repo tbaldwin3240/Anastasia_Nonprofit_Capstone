@@ -5,6 +5,24 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+#myMiss{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: x-large;
+}
+
+#MissLogo{
+  background-color: crimson;
+  background-blend-mode: hard-light;
+  background-image: url('./components/img/gf-logo.jpeg');
+  background-size: contain;
+  background-repeat: none;
+  align-self: center;
+  height: 39.7vh;
+  width: 100vh;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 * {
