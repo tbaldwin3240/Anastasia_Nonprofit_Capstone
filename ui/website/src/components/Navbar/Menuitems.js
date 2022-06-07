@@ -8,12 +8,12 @@ export const MenuItems = [
     },
     {
         title: 'Gallery',
-        url: 'http://localhost:3000/galley',
+        url: 'http://localhost:3000/gallery',
         cName: 'nav-links'
     },
     {
-        title: 'About Me',
-        url: 'http://localhost:3000/AboutMe',
+        title: 'About Us',
+        url: 'http://localhost:3000/Mission',
         cName: 'nav-links'
     },
     {
